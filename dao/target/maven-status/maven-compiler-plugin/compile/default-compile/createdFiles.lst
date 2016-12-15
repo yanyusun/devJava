@@ -1,0 +1,5 @@
+operObj/OperObjRe.class
+operType/OperType.class
+base/Dao.class
+util/OperTypeDao.class
+util/OperObjReDao.class

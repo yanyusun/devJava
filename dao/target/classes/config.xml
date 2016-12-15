@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="jdbc.properties" />
+	<typeAliases>
+		<typeAlias type="operObj.OperObjRe" alias="OperObjRe" />
+		<typeAlias type="operType.OperType" alias="OperType" />
+	</typeAliases>
+	<environments default="develop">
+		<!-- 配置一个数据源 -->
+		<environment id="develop">
+			<!-- jdbc事务使用jdbc事务管理机制 ,managed将事务交给容器管理 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!-- POOLED数据库连接池 ， UNPOOLED使用jdbc数据库连接配置，JNDI目录查找形式获取数据库连接 -->
+			<dataSource type="UNPOOLED">
+				<property name="url" value="${urls}" />
+				<property name="driver" value="${drivers}" />
+				<property name="username" value="${usernames}" />
+				<property name="password" value="${passwords}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mybatis/operObjRe.xml" />
+		<mapper resource="mybatis/operType.xml" />
+	</mappers>
+
+</configuration>
